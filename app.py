@@ -3,7 +3,7 @@ import streamlit as st
 
 
 # loading the trained model
-pickle_in = open('classifier.pkl', 'rb') 
+pickle_in = open('hernan.pkl', 'rb') 
 classifier = pickle.load(pickle_in)
   
 @st.cache_data()
@@ -30,7 +30,7 @@ def prediction(Gender, Married, ApplicantIncome, LoanAmount, Credit_History):
     LoanAmount = LoanAmount / 1000
  
     # Making predictions 
-    prediction = classifier.predict( 
+    prediction = hernan.predict( 
         [[Gender, Married, ApplicantIncome, LoanAmount, Credit_History]])
      
     if prediction == 0:
